@@ -1,9 +1,14 @@
 tasks = []
 
 def add_task():
-    title = input("Enter task title: ")
+    title = input("Enter task title: ").strip()
+    if not title:
+        print("⚠️ Task title cannot be empty.")
+        return
+
     tasks.append({"title": title})
-    print("✅ Task added.")
+    print(f"✅ Task '{title}' added.")
+
 
 def list_tasks():
     if not tasks:
